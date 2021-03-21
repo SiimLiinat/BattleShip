@@ -1,0 +1,12 @@
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\MenuSystem\bin\Debug\net5.0\MenuSystem.deps.json
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\MenuSystem\bin\Debug\net5.0\MenuSystem.dll
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\MenuSystem\bin\Debug\net5.0\ref\MenuSystem.dll
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\MenuSystem\bin\Debug\net5.0\MenuSystem.pdb
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\MenuSystem\obj\Debug\net5.0\MenuSystem.csprojAssemblyReference.cache
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\MenuSystem\obj\Debug\net5.0\MenuSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\MenuSystem\obj\Debug\net5.0\MenuSystem.AssemblyInfoInputs.cache
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\MenuSystem\obj\Debug\net5.0\MenuSystem.AssemblyInfo.cs
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\MenuSystem\obj\Debug\net5.0\MenuSystem.csproj.CoreCompileInputs.cache
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\MenuSystem\obj\Debug\net5.0\MenuSystem.dll
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\MenuSystem\obj\Debug\net5.0\ref\MenuSystem.dll
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\MenuSystem\obj\Debug\net5.0\MenuSystem.pdb

@@ -1,0 +1,56 @@
+@page
+@using Domain
+@using Domain.Enums
+@model WebApp.Pages_GameOptions.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>GameOption</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="GameOption.Name" class="control-label"></label>
+                <input asp-for="GameOption.Name" class="form-control" />
+                <span asp-validation-for="GameOption.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GameOption.BoardWidth" class="control-label"></label>
+                <input asp-for="GameOption.BoardWidth" class="form-control" />
+                <span asp-validation-for="GameOption.BoardWidth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GameOption.BoardLength" class="control-label"></label>
+                <input asp-for="GameOption.BoardLength" class="form-control" />
+                <span asp-validation-for="GameOption.BoardLength" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GameOption.EShipsCanTouch" class="control-label"></label>
+                <select asp-for="GameOption.EShipsCanTouch" asp-items="Html.GetEnumSelectList<EShipsCanTouch>()" class="form-control"></select>
+                <span asp-validation-for="GameOption.EShipsCanTouch" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GameOption.ENextMoveAfterHit" class="control-label"></label>
+                <select asp-for="GameOption.ENextMoveAfterHit" asp-items="Html.GetEnumSelectList<ENextMoveAfterHit>()" class="form-control"></select>
+                <span asp-validation-for="GameOption.ENextMoveAfterHit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

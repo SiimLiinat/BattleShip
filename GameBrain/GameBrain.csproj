@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Content Include="bin\Debug\netstandard2.1\GameBrain.deps.json" />
+      <Content Include="bin\Debug\netstandard2.1\GameBrain.dll" />
+      <Content Include="bin\Debug\netstandard2.1\GameBrain.pdb" />
+      <Content Include="obj\Debug\netstandard2.1\GameBrain.AssemblyInfoInputs.cache" />
+      <Content Include="obj\Debug\netstandard2.1\GameBrain.assets.cache" />
+      <Content Include="obj\Debug\netstandard2.1\GameBrain.csproj.CoreCompileInputs.cache" />
+      <Content Include="obj\Debug\netstandard2.1\GameBrain.csproj.FileListAbsolute.txt" />
+      <Content Include="obj\Debug\netstandard2.1\GameBrain.csprojAssemblyReference.cache" />
+      <Content Include="obj\Debug\netstandard2.1\GameBrain.dll" />
+      <Content Include="obj\Debug\netstandard2.1\GameBrain.pdb" />
+      <Content Include="obj\GameBrain.csproj.nuget.dgspec.json" />
+      <Content Include="obj\GameBrain.csproj.nuget.g.props" />
+      <Content Include="obj\GameBrain.csproj.nuget.g.targets" />
+      <Content Include="obj\project.assets.json" />
+      <Content Include="obj\project.nuget.cache" />
+      <Content Include="obj\project.packagespec.json" />
+      <Content Include="obj\rider.project.restore.info" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="obj\Debug\netstandard2.1\.NETStandard,Version=v2.1.AssemblyAttributes.cs" />
+      <Compile Include="obj\Debug\netstandard2.1\GameBrain.AssemblyInfo.cs" />
+      <Compile Remove="bin\**" />
+      <Compile Remove="obj\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="bin\**" />
+      <EmbeddedResource Remove="obj\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="bin\**" />
+      <None Remove="obj\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="System.Text.Json, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+        <HintPath>..\..\..\..\.dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Text.Json.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Colorful.Console" Version="1.2.15" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.1" />
+      <PackageReference Include="System.Text.Json" Version="5.0.0-rc.1.20451.14" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DAL\DAL.csproj" />
+      <ProjectReference Include="..\Domain\Domain.csproj" />
+    </ItemGroup>
+
+</Project>

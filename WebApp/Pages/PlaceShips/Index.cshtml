@@ -1,0 +1,49 @@
+﻿@page
+@using GameBrain
+@model WebApp.Pages.PlaceShips.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@functions
+{
+    private static string SquareString(CellState? cellState)
+    {
+        return cellState switch
+        {
+            CellState.Empty => "&nbsp;",
+            CellState.O => "💣",
+            CellState.S => "🚢",
+            CellState.X => "❌",
+            _ => "-"
+            };
+    }
+}
+
+<div class="row">
+    <div class="col-md text-center">
+        <h1>Place your battleships</h1>
+        <table class="table table-bordered table-info">
+            <thead class="thead-light">
+            <tr>
+                @for (var y = 0; y < Model.Board.GetHeight(); y++)
+                {
+                    <th scope="col">@Game.Alphabet[y]</th>
+                }
+            </tr>
+            </thead>
+            @for (var y = 0; y < Model.Board.GetHeight(); y++)
+            {
+                <tr>
+                    @for (var x = 0; x < Model.Board.GetWidth(); x++)
+                    {
+                        <td class="@(Model.Board.board[x, y])" onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">
+                            @Html.Raw(SquareString(Model.Board.GetSquare(x, y)))
+                        </td>
+                    }
+                </tr>
+            }
+        </table>
+    </div>
+</div>

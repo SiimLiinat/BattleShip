@@ -1,0 +1,91 @@
+﻿@page
+@using Domain.Enums
+@using GameBrain
+@using System.Text.Json
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Battleship</h1>
+</div>
+<br>
+<div class="text-center">
+    <img src="https://i.pinimg.com/originals/ae/07/df/ae07df8afc0dca2fc280d01c76528993.png" class="img-fluid">
+</div>
+<form method="post" class="border badge-light rounded">
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col text-center">
+                <label asp-for="PlayerA">Player 1 Type</label>
+                <select asp-for="PlayerA" asp-items="Html.GetEnumSelectList<EPlayerType>()" class="form-control"></select>
+            </div>
+            <div class="col text-center">
+                <label asp-for="PlayerB">Player 2 Type</label>
+                <select asp-for="PlayerB" asp-items="Html.GetEnumSelectList<EPlayerType>()" class="form-control"></select>
+            </div>
+            <div class="col text-center">
+                <label asp-for="BoardSize">Board Size</label>
+                <input asp-for="BoardSize" class="form-control" placeholder="10" value="10">
+            </div>
+        </div>
+    </div>
+    <hr class="separator">
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col text-center">
+                <label asp-for="ENextMoveAfterHit">Whose move is it after hitting a ship?</label>
+                <select asp-for="ENextMoveAfterHit" asp-items="Html.GetEnumSelectList<ENextMoveAfterHit>()" class="form-control"></select>
+            </div>
+            <div class="col text-center">
+                <label asp-for="EShipsCanTouch">Can ships touch?</label>
+                <select asp-for="EShipsCanTouch" asp-items="Html.GetEnumSelectList<EShipsCanTouch>()" class="form-control"></select>
+            </div>
+            <div class="col text-center">
+                <label asp-for="ShipStandards">Ship sizes and counts. Size:Count</label>
+                <input asp-for="ShipStandards" class="form-control" value="@(JsonSerializer.Serialize(new Game().GetShipStandards()))">
+            </div>
+        </div>
+    </div>
+    <hr class="separator">
+    <div class="col text-center">
+        <button type="submit" class="btn btn-primary">New Game</button>
+    </div>
+    <br>
+</form>
+<br>
+<table class="table table-bordered table-hover table-sm">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Game[0].CreatedAt)
+        </th>
+        <th>
+            Player 1
+        </th>
+        <th>
+            Player 2
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Game.Reverse().Where(x => x.GameOver == false)) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Players[0].EPlayerType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Players[1].EPlayerType)
+            </td>
+            <td>
+                <a asp-page="./PlaceShips/Index" asp-route-id="@item.GameId" asp-route-side="1">Load Game</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

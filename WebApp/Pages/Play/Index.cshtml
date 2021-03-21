@@ -1,0 +1,128 @@
+﻿@page
+@using GameBrain
+@model WebApp.Pages.Play.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@functions
+{
+    private static string SquareString(CellState? cellState)
+    {
+        return cellState switch
+        {
+            CellState.Empty => "&nbsp;",
+            CellState.O => "💣",
+            CellState.S => "🚢",
+            CellState.X => "❌",
+            _ => "-"
+            };
+    }
+
+    private static string EnemySquareString(CellState? cellState)
+    {
+        return cellState switch
+        {
+            CellState.Empty => "&nbsp;",
+            CellState.O => "💣",
+            CellState.S => "&nbsp;",
+            CellState.X => "❌",
+            _ => "-"
+            };
+    }
+}
+<div class="row">
+    <div class="col-md text-center">
+        <h1>Opponent's board</h1>
+        <table class="table table-bordered table-info">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col"></th>
+                @for (var y = 0; y < Model.Board2.GetHeight(); y++)
+                {
+                    <th scope="col">@Game.Alphabet[y]</th>
+                }
+            </tr>
+            </thead>
+            @for (var y = 0; y < Model.Board1.GetHeight(); y++)
+            {
+                <tr>
+                    <td class="table-light">@(y+1)</td>
+                    @for (var x = 0; x < Model.Board1.GetWidth(); x++)
+                    {
+                        if (Model.Continue || Model.Board1.GetSquare(x, y) == CellState.X || Model.Board1.GetSquare(x, y) == CellState.O)
+                        {
+                            <td class="@(Model.Board1.board[x, y])" style="cursor: pointer">
+                                @Html.Raw(EnemySquareString(Model.Board1.GetSquare(x, y)))
+                            </td>
+                        }
+                        else
+                        {
+                            <td class="@(Model.Board1.board[x, y])" onclick="window.location.href='?x=@x&y=@y&id=@Model.Game?.GameId&cont=@true'" style="cursor: pointer">
+                                @Html.Raw(EnemySquareString(Model.Board1.GetSquare(x, y)))
+                            </td>
+                        }
+                    }
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="col-md text-center">
+        <p>
+            <button class="btn btn-outline-dark btn-block" type="button" data-toggle="collapse" data-target="#collapseTable" aria-expanded="false" aria-controls="collapseTable">
+                Your board
+            </button>
+        </p>
+        <div class="collapse" id="collapseTable">
+            <table class="table table-bordered table-info">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col"></th>
+                    @for (var y = 0; y < Model.Board2.GetHeight(); y++)
+                    {
+                        <th scope="col">@Game.Alphabet[y]</th>
+                    }
+                </tr>
+                </thead>
+                @for (var y = 0; y < Model.Board2.GetHeight(); y++)
+                {
+                    <tr>
+                        <td class="table-light">
+                            @(y + 1)
+                        </td>
+                        @for (var x = 0; x < Model.Board2.GetWidth(); x++)
+                        {
+                            <td class="@(Model.Board2.board[x, y])">
+                                @Html.Raw(SquareString(Model.Board2.GetSquare(x, y)))
+                            </td>
+                        }
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+<div class="col-md text-center">
+    @if (Model.Ship != null && Model.Ship!.ShipCoordinates!.Count == 0 && Model.GameOver != true)
+    {
+        <h2>💥 You sunk their battleship 💥</h2>
+    }
+    @if (Model.Continue && Model.GameOver != true)
+    {
+        <a class="btn btn-primary btn-lg" asp-page="../Play/Index" asp-route-id="@Model.Game?.GameId" role="button">Continue. Next move by Player @(Model.Game!.TurnA ? 1 : 2).</a>
+    }
+</div>
+<div class="col-md text-center">
+@if (Model.GameOver)
+{
+    if (Model.BattleShip.Board1.GetShipSquares().Count == 0)
+    {
+        <a class="btn btn-primary btn-lg" asp-page="/Index" role="button">Player 1 has won. Click here to return to main menu.</a>
+    }
+    else if (Model.BattleShip.Board2.GetShipSquares().Count == 0)
+    {
+        <a class="btn btn-primary btn-lg" asp-page="/Index" role="button">Player 2 has won. Click here to return to main menu.</a>
+    }
+}
+</div>

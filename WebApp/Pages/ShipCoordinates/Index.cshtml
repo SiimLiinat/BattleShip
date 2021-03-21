@@ -1,0 +1,48 @@
+@page
+@model WebApp.Pages_ShipCoordinates.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipCoordinate[0].X)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipCoordinate[0].Y)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipCoordinate[0].Ship)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ShipCoordinate) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.X)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Y)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ship.ShipId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ShipCoordinateId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ShipCoordinateId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ShipCoordinateId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

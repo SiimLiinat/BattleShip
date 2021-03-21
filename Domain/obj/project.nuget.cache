@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "p9Id/1TH/W1lefcaZBHNZlSIcJ3CUYPgdH+Krn2PDcMXzSawZUwJz/+dwU4Or+7k7n5zasGOHYwihQGtjv0gBg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Siim\\RiderProjects\\icd0008-2020f\\BattleShip\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Siim\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

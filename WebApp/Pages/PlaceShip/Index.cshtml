@@ -1,0 +1,97 @@
+﻿@page
+@using Domain.Enums
+@using GameBrain
+@model WebApp.Pages.PlaceShip.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@functions
+{
+    private static string SquareString(CellState? cellState)
+    {
+        return cellState switch
+        {
+            CellState.Empty => "&nbsp;",
+            CellState.S => "🚢",
+            _ => "-"
+            };
+    }
+}
+
+<div class="row">
+    <div class="col-md text-center">
+        <h1>Player @Model.Side's board</h1>
+        <table class="table table-bordered table-info">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col"></th>
+                @for (var y = 0; y < Model.Board.GetHeight(); y++)
+                {
+                    <th scope="col">@Game.Alphabet[y]</th>
+                }
+            </tr>
+            </thead>
+            @for (var y = 0; y < Model.Board.GetHeight(); y++)
+            {
+                <tr>
+                    <td class="table-light">@(y+1)</td>
+                    @for (var x = 0; x < Model.Board.GetWidth(); x++)
+                    {
+                    
+                        if (Model.Board.GetSquare(x, y) == CellState.S || Model.Length == 0)
+                        {
+                            <td class="@(Model.Board.board[x, y])" style="cursor: pointer">
+                                @Html.Raw(SquareString(Model.Board.GetSquare(x, y)))
+                            </td>
+                        }
+                        else
+                        {
+                            <td onclick="window.location = 'PlaceShips/Index?id=@Model.Game.GameId&side=@Model.Side&x=@x&y=@y&length=@Model.Length&eShipPositioning=@Model.EShipPositioning'" class="@(Model.Board.board[x, y])" style="cursor: pointer">
+                                @Html.Raw(SquareString(Model.Board.GetSquare(x, y)))
+                            </td>
+                        }
+                    }
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+@if (Model.Length != 0)
+{
+    <div class="col-md text-center">
+        <h2>Current ship's dimensions: @(Model.Length)x1</h2>
+    </div>
+}
+else
+{
+    <div class="col-md text-center">
+        <a class="btn btn-primary btn-lg" asp-page="../PlaceShips/Index" asp-route-id="@Model.Game.GameId" asp-route-side="@Model.Side" asp-route-length="@Model.Length" asp-route-random="@true">Continue</a>
+    </div>
+}
+<div class="col-md text-center">
+    <p>
+        <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseTable" aria-expanded="false" aria-controls="collapseTable">
+            Guide
+        </button>
+    </p>
+    <div class="collapse" id="collapseTable">
+        <h4>Choose which way the ship should be placed: Horizontal (left-right) or Vertical (up-down). Then click on the board where the ship should start. If a ship can be placed on the square, a horizontal one will go right from the square and a vertical one will go down. </h4>
+        <h4>Or have the AI place the ship by pressing the button below.</h4>
+    </div>
+</div>
+<form method="post">
+    <div class="col text-center">
+        <h2><label asp-for="EShipPositioning" >Choose ship positioning:</label></h2>
+        <select asp-for="EShipPositioning" asp-items="Html.GetEnumSelectList<EShipPositioning>()" onchange="this.form.submit()" class="form-control"></select>
+        <input asp-for="Id" hidden="hidden" value="@Model.Game.GameId"/>
+        <input asp-for="Side" hidden="hidden" value="@Model.Side"/>
+    </div>
+    <input asp-for="Id" hidden="hidden" value="@Model.Game.GameId"/>
+    <input asp-for="Side" hidden="hidden" value="@Model.Side"/>
+</form>
+<h2 class="text-center">Or</h2>
+<div class="col-md text-center">
+    <a class="btn btn-primary btn-lg" asp-page="../PlaceShips/Index" asp-route-id="@Model.Game.GameId" asp-route-side="@Model.Side" asp-route-length="@Model.Length" asp-route-random="@true">Place ship by random</a>
+</div>

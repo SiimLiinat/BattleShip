@@ -1,0 +1,17 @@
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\GameBrain\bin\Debug\net5.0\GameBrain.deps.json
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\GameBrain\bin\Debug\net5.0\GameBrain.dll
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\GameBrain\bin\Debug\net5.0\ref\GameBrain.dll
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\GameBrain\bin\Debug\net5.0\GameBrain.pdb
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\GameBrain\obj\Debug\net5.0\GameBrain.csprojAssemblyReference.cache
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\GameBrain\obj\Debug\net5.0\GameBrain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\GameBrain\obj\Debug\net5.0\GameBrain.AssemblyInfoInputs.cache
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\GameBrain\obj\Debug\net5.0\GameBrain.AssemblyInfo.cs
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\GameBrain\obj\Debug\net5.0\GameBrain.csproj.CoreCompileInputs.cache
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\GameBrain\obj\Debug\net5.0\GameBrain.dll
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\GameBrain\obj\Debug\net5.0\ref\GameBrain.dll
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\GameBrain\obj\Debug\net5.0\GameBrain.pdb
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\GameBrain\bin\Debug\net5.0\Domain.dll
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\GameBrain\bin\Debug\net5.0\Domain.pdb
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\GameBrain\obj\Debug\net5.0\GameBrain.csproj.CopyComplete
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\GameBrain\bin\Debug\net5.0\DAL.dll
+C:\Users\Siim\RiderProjects\icd0008-2020f\BattleShip\GameBrain\bin\Debug\net5.0\DAL.pdb
