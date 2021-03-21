@@ -23,7 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="903fccab-ad4e-49e5-af36-f169fee41507" name="Default Changelist" comment="Minor fixes to HumanVsAI">
-      <change beforePath="$PROJECT_DIR$/GameBrain/moveHistory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GameBrain/moveHistory.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BattleShip/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BattleShip/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BattleShip/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BattleShip/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +34,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -110,6 +113,7 @@
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jsZ3u6PFypgMTXehei2i4ZJpD0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -221,6 +225,7 @@
       <workItem from="1609876125065" duration="61000" />
       <workItem from="1609876459192" duration="86000" />
       <workItem from="1611494303793" duration="230000" />
+      <workItem from="1616346841086" duration="420000" />
     </task>
     <task id="LOCAL-00001" summary="Minor fixes">
       <created>1604595718683</created>
